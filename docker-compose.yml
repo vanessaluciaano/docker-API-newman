@@ -5,11 +5,10 @@ services:
     build: .
     image: postman_report
     command:
-      run Fruits.postman_collection.json
-      --environment QA.postman_environment.json
-      -r html,cli
-      --reporter-html-export report/report.html
-      --reporter-html-template report/template.hbs
-
+      - run Fruits.postman_collection.json
+      - --environment QA.postman_environment.json
+      - -r html,cli
+      - --reporter-html-export report/report.html
+      - --reporter-html-template report/template.hbs
     volumes:
-      - ./src:etc/newman
+      - ./src:/etc/newman
