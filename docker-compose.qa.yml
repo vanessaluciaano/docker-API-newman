@@ -12,7 +12,7 @@ services:
       --reporter-html-template report/template.hbs
 
     volumes:
-      - ./src:etc/newman
+      - ./src:/etc/newman
 
   test2:
     container_name: Integration_test2
@@ -26,4 +26,4 @@ services:
       --reporter-html-template report/template.hbs
 
     volumes:
-      - /src:/etc/newman
+      - ./src:/etc/newman
